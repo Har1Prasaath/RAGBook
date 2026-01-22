@@ -1,4 +1,4 @@
-# AI Booking Assistant
+# AI Booking Assistant-RAGBook
 
 An AI-powered booking assistant with RAG (Retrieval Augmented Generation) capabilities, built with Streamlit and LangChain.
 
@@ -96,6 +96,3 @@ Available at `http://localhost:8000`:
 - **Email**: SendGrid
 - **Backend** (optional): FastAPI
 
-## License
-
-MIT License
