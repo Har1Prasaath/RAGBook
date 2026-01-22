@@ -6,7 +6,6 @@ Uses Google Generative AI with native function calling.
 import os
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
-import streamlit as st
 import google.generativeai as genai
 
 load_dotenv()
@@ -14,8 +13,7 @@ load_dotenv()
 from .tools import TOOL_MAP, search_knowledge_base, create_booking, send_confirmation_email, get_booking_info, web_search_movies
 
 # Configure Gemini
-# gemini 2.0 flash
-# genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
+genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 
 
 # Define tools for Gemini function calling
@@ -163,23 +161,13 @@ class BookingAssistant:
     Uses Gemini native function calling for reliable tool execution.
     """
     
-    def __init__(self, max_history: int = 10):
+    def __init__(self, max_history: int = 20):
         """
         Initialize the booking assistant.
         
         Args:
             max_history: Maximum number of messages to keep in conversation history (default 20)
         """
-        # Get API key from Streamlit secrets or environment
-        try:
-            api_key = st.secrets.get("GOOGLE_API_KEY") or os.getenv("GOOGLE_API_KEY")
-            if not api_key:
-                raise ValueError("GOOGLE_API_KEY not found in secrets or environment variables")
-            genai.configure(api_key=api_key)
-        except Exception as e:
-            st.error(f"Failed to configure Google AI: {e}")
-            raise
-        
         self.model = genai.GenerativeModel(
             model_name="gemini-2.0-flash",
             system_instruction=SYSTEM_PROMPT,
