@@ -1,0 +1,28 @@
+# Core dependencies
+fastapi==0.109.0
+uvicorn==0.27.0
+python-dotenv==1.0.0
+pydantic==2.5.3
+
+# RAG dependencies
+chromadb==0.4.22
+PyPDF2==3.0.1
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+
+# LLM
+google-generativeai==0.3.2
+
+# Streamlit frontend
+streamlit==1.31.0
+pandas==2.2.0
+requests==2.31.0
+
+# Email
+sendgrid==6.11.0
+
+# Utilities
+tavily-python==0.3.0
+python-multipart
