@@ -160,18 +160,18 @@ def render_sidebar():
     """Render the sidebar navigation."""
     with st.sidebar:
         st.markdown("## 🧭 Navigation")
-        st.page_link("streamlit_app.py", label="💬 Chat", icon="💬")
-        st.page_link("pages/admin.py", label="📊 Admin Dashboard", icon="📊")
+        st.page_link("streamlit_app.py", label=" Chat", icon="💬")
+        st.page_link("pages/admin.py", label=" Admin Dashboard", icon="📊")
         
         st.markdown("---")
         
         st.markdown("## 📊 Dashboard Info")
         st.markdown("""
         Manage and view all bookings:
-        - 📋 View all bookings
-        - 🔍 Filter by name, email, date
-        - ✏️ Update booking status
-        - 📈 View statistics
+        -  View all bookings
+        -  Filter by name, email, date
+        -  Update booking status
+        -  View statistics
         """)
 
 
