@@ -269,10 +269,10 @@ def render_chat():
                 👋 **Hello! I'm your AI Booking Assistant.**
                 
                 I can help you with:
-                - 📚 **Answering questions** about uploaded documents
-                - 📅 **Making bookings** - just say "I want to make a booking"
-                - 📧 **Sending confirmations** via email
-                - 🔍 **Checking booking details**
+                -  **Answering questions** about uploaded documents
+                -  **Making bookings** - just say "I want to make a booking"
+                -  **Sending confirmations** via email
+                -  **Checking booking details**
                 
                 How can I assist you today?
                 """)
