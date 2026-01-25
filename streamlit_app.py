@@ -222,8 +222,8 @@ def render_sidebar():
         
         # Navigation
         st.markdown("## 🧭 Navigation")
-        st.page_link("streamlit_app.py", label="💬 Chat", icon="💬")
-        st.page_link("pages/admin.py", label="📊 Admin Dashboard", icon="📊")
+        st.page_link("streamlit_app.py", label=" Chat", icon="💬")
+        st.page_link("pages/admin.py", label=" Admin Dashboard", icon="📊")
         
         st.markdown("---")
         
@@ -231,9 +231,9 @@ def render_sidebar():
         st.markdown("## ℹ️ About")
         st.markdown("""
         **AI Booking Assistant** helps you:
-        - 📚 Answer questions from uploaded PDFs
-        - 📅 Create and manage bookings
-        - 📧 Send confirmation emails
+        -  Answer questions from uploaded PDFs
+        -  Create and manage bookings
+        -  Send confirmation emails
         
         Just type your message below!
         """)
