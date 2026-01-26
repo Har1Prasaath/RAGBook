@@ -230,14 +230,14 @@ def render_filters():
     with col3:
         date_from = st.date_input(
             "Date From",
-            value=datetime.now() - timedelta(days=30),
+            value=datetime.now() - timedelta(days=90),
             key="date_from"
         )
     
     with col4:
         date_to = st.date_input(
             "Date To",
-            value=datetime.now() + timedelta(days=30),
+            value=datetime.now() + timedelta(days=90),
             key="date_to"
         )
     
