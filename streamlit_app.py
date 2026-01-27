@@ -222,8 +222,8 @@ def render_sidebar():
         
         # Navigation
         st.markdown("##  Navigation")
-        st.page_link("streamlit_app.py", label=" Chat", icon="💬")
-        st.page_link("pages/admin.py", label=" Admin Dashboard", icon="📊")
+        st.page_link("streamlit_app.py", label=" Chat", icon="")
+        st.page_link("pages/admin.py", label=" Admin Dashboard", icon="")
         
         st.markdown("---")
         
