@@ -159,13 +159,13 @@ def update_booking_status(booking_id: int, new_status: str):
 def render_sidebar():
     """Render the sidebar navigation."""
     with st.sidebar:
-        st.markdown("## 🧭 Navigation")
-        st.page_link("streamlit_app.py", label=" Chat", icon="💬")
-        st.page_link("pages/admin.py", label=" Admin Dashboard", icon="📊")
+        st.markdown("##  Navigation")
+        st.page_link("streamlit_app.py", label=" Chat")
+        st.page_link("pages/admin.py", label=" Admin Dashboard")
         
         st.markdown("---")
         
-        st.markdown("## 📊 Dashboard Info")
+        st.markdown("##  Dashboard Info")
         st.markdown("""
         Manage and view all bookings:
         -  View all bookings
@@ -181,35 +181,35 @@ def render_metrics(stats):
     
     with col1:
         st.metric(
-            label="📅 Total Bookings",
+            label=" Total Bookings",
             value=stats["total"],
             delta=None
         )
     
     with col2:
         st.metric(
-            label="📆 Today",
+            label=" Today",
             value=stats["today"],
             delta=None
         )
     
     with col3:
         st.metric(
-            label="✅ Confirmed",
+            label=" Confirmed",
             value=stats["confirmed"],
             delta=None
         )
     
     with col4:
         st.metric(
-            label="⏳ Pending",
+            label=" Pending",
             value=stats["pending"],
             delta=None
         )
     
     with col5:
         st.metric(
-            label="👥 Customers",
+            label=" Customers",
             value=stats["customers"],
             delta=None
         )
@@ -217,7 +217,7 @@ def render_metrics(stats):
 
 def render_filters():
     """Render the filter controls."""
-    st.markdown("### 🔍 Filters")
+    st.markdown("###  Filters")
     
     col1, col2, col3, col4 = st.columns(4)
     
@@ -312,7 +312,7 @@ def render_bookings_table(df: pd.DataFrame):
         st.info("📭 No bookings found matching your filters.")
         return
     
-    st.markdown(f"### 📋 Bookings ({len(df)} records)")
+    st.markdown(f"###  Bookings ({len(df)} records)")
     
     # Display the dataframe
     st.dataframe(
@@ -334,7 +334,7 @@ def render_bookings_table(df: pd.DataFrame):
     
     # Status update section
     st.markdown("---")
-    st.markdown("### ✏️ Update Booking Status")
+    st.markdown("###  Update Booking Status")
     
     col1, col2, col3 = st.columns([1, 1, 2])
     
@@ -353,9 +353,9 @@ def render_bookings_table(df: pd.DataFrame):
     
     with col3:
         st.markdown("<br>", unsafe_allow_html=True)
-        if st.button("🔄 Update Status", type="primary", disabled=not selected_id):
+        if st.button(" Update Status", type="primary", disabled=not selected_id):
             if update_booking_status(selected_id, new_status):
-                st.success(f"✅ Booking #{selected_id} status updated to '{new_status}'")
+                st.success(f" Booking #{selected_id} status updated to '{new_status}'")
                 st.rerun()
 
 
@@ -365,7 +365,7 @@ def render_export_section(df: pd.DataFrame):
         return
     
     st.markdown("---")
-    st.markdown("### 📥 Export Data")
+    st.markdown("###  Export Data")
     
     col1, col2 = st.columns(2)
     
@@ -373,7 +373,7 @@ def render_export_section(df: pd.DataFrame):
         # Export to CSV
         csv = df.to_csv(index=False)
         st.download_button(
-            label="📄 Download CSV",
+            label=" Download CSV",
             data=csv,
             file_name=f"bookings_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
             mime="text/csv"
@@ -383,7 +383,7 @@ def render_export_section(df: pd.DataFrame):
         # Export to JSON
         json_str = df.to_json(orient="records", indent=2)
         st.download_button(
-            label="📋 Download JSON",
+            label=" Download JSON",
             data=json_str,
             file_name=f"bookings_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json",
             mime="application/json"
@@ -395,7 +395,7 @@ def main():
     render_sidebar()
     
     # Header
-    st.markdown("# 📊 Admin Dashboard")
+    st.markdown("#  Admin Dashboard")
     st.markdown("Manage and monitor all bookings in one place.")
     
     st.markdown("---")
