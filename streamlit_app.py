@@ -150,7 +150,7 @@ def display_chat_message(role: str, content: str):
 def render_sidebar():
     """Render the sidebar with upload and controls."""
     with st.sidebar:
-        st.markdown("## 📁 Document Upload")
+        st.markdown("## Document Upload")
         st.markdown("Upload PDFs to enhance the assistant's knowledge.")
         
         # File uploader
@@ -162,7 +162,7 @@ def render_sidebar():
         )
         
         if uploaded_files:
-            if st.button("📤 Process Uploaded Files", type="primary"):
+            if st.button(" Process Uploaded Files", type="primary"):
                 with st.spinner("Processing files..."):
                     import requests
                     
@@ -200,35 +200,35 @@ def render_sidebar():
         st.markdown("---")
         
         # Quick actions
-        st.markdown("## ⚡ Quick Actions")
+        st.markdown("##  Quick Actions")
         
         col1, col2 = st.columns(2)
         
         with col1:
-            if st.button("🗑️ Clear Chat"):
+            if st.button(" Clear Chat"):
                 st.session_state.messages = []
                 st.session_state.assistant.clear_history()
                 st.rerun()
         
         with col2:
-            if st.button("📊 View Stats"):
+            if st.button(" View Stats"):
                 try:
                     stats = st.session_state.data_ingestion.get_stats()
-                    st.info(f"📚 Documents: {stats['total_documents']}")
+                    st.info(f" Documents: {stats['total_documents']}")
                 except Exception as e:
                     st.error(f"Error: {str(e)}")
         
         st.markdown("---")
         
         # Navigation
-        st.markdown("## 🧭 Navigation")
+        st.markdown("##  Navigation")
         st.page_link("streamlit_app.py", label=" Chat", icon="💬")
         st.page_link("pages/admin.py", label=" Admin Dashboard", icon="📊")
         
         st.markdown("---")
         
         # Info
-        st.markdown("## ℹ️ About")
+        st.markdown("##  About")
         st.markdown("""
         **AI Booking Assistant** helps you:
         -  Answer questions from uploaded PDFs
@@ -240,7 +240,7 @@ def render_sidebar():
         
         # Show conversation length
         history_len = st.session_state.assistant.get_history_length()
-        st.caption(f"💭 Conversation memory: {history_len // 2} exchanges")
+        st.caption(f" Conversation memory: {history_len // 2} exchanges")
 
 
 def render_chat():
@@ -248,7 +248,7 @@ def render_chat():
     # Header
     st.markdown("""
     <div class="main-header">
-        <h1>📅 AI Booking Assistant</h1>
+        <h1> AI Booking Assistant</h1>
         <p style="color: #6b7280;">Your intelligent assistant for bookings and information</p>
     </div>
     """, unsafe_allow_html=True)
@@ -266,7 +266,7 @@ def render_chat():
         if not st.session_state.messages:
             with st.chat_message("assistant", avatar="🤖"):
                 st.markdown("""
-                👋 **Hello! I'm your AI Booking Assistant.**
+                 **Hello! I'm your AI Booking Assistant.**
                 
                 I can help you with:
                 -  **Answering questions** about uploaded documents
